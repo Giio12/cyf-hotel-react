@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #7b1fa2;
   height: 150px;
 }
 
@@ -62,5 +62,31 @@ tr {
   padding: 30px;
 }
 .card {
-  width: 18rem;
+  width: 19rem;
+  height: 35rem;
+  text-align: center;
+
+  border-radius: 10px;
+}
+
+.column-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+.App-Footer {
+  background-color: #7b1fa2;
+  color: white;
+}
+.column-footer {
+  padding: 20px 0px 0px 50px;
+  font-size: 90%;
+}
+#iconos {
+  font-size: 30px;
+  color: white;
+}
+#table {
+  background-color: #e9d2f3;
 }
