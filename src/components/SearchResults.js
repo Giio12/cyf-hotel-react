@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
-  useState();
+  const [selectedRow, setSelectedRow] = useState(null);
+
   return (
-    <table class="table table-striped table-hover" id="table">
+    <table class="table table-striped table-hover mt-5" id="table">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -15,14 +16,25 @@ const SearchResults = ({ results }) => {
           <th scope="col">Room ID</th>
           <th scope="col">Check In Date</th>
           <th scope="col">Check Out Date</th>
-          <th scope="col">Night</th>
+          <th scope="col">Nights Stay</th>
         </tr>
       </thead>
       <tbody>
-        {results.map((guest, id) => {
+        {results.map(guest => {
           return (
             <>
-              <tr key={id}>
+              <tr
+                key={guest.id}
+                className={`tr${guest.id}`}
+                onClick={event => {
+                  selectedRow
+                    ? setSelectedRow(null)
+                    : setSelectedRow(event.target.innerText);
+                }}
+                style={{
+                  background: guest.id == selectedRow ? "#f48fb1" : null
+                }}
+              >
                 <th scope="row">{guest.id}</th>
                 <td scope="row">{guest.title}</td>
                 <td scope="row">{guest.firstName}</td>

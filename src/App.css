@@ -90,3 +90,10 @@ tr {
 #table {
   background-color: #e9d2f3;
 }
+.container {
+  display: inline-block;
+}
+#btnAdd {
+  background-color: #7b1fa2;
+  margin: 10px;
+}
